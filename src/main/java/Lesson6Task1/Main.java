@@ -2,6 +2,7 @@ package Lesson6Task1;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -28,6 +29,14 @@ public class Main {
             writer.write(text);
         } catch (Exception exception) {
             exception.printStackTrace();
+        }
+        BufferedWriter br = new BufferedWriter(new FileWriter("data.txt"));
+        String line;
+        int i = 1;
+        while ((line = br.readLine()) != null) {
+            if (i++ % 2 == 0) {
+                System.out.println(line);
+            }
         }
     }
 
