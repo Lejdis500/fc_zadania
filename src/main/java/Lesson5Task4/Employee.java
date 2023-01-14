@@ -25,12 +25,12 @@ public class Employee {
         this.baseSalary = sumOfSalary;
     }
 
-    public Employee(String name, int age, BigDecimal value1, BigDecimal sumOfBonus, String surname) {
+    public Employee(String name, int age, BigDecimal valueOfBigDecimal, BigDecimal sumOfBonus, String surname) {
         this(name, surname, age);
         this.bonus = sumOfBonus;
     }
 
-    public String getEmployee_Info() {
+    public String getemployee_Info() {
         return "Employee name :" + name + "" + surname;
     }
 
