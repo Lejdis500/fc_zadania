@@ -6,7 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Text {
-    public class Main {
         public static void main(String[] args) {
             File file = new File("C:\\data.txt");
             try {
@@ -15,4 +14,4 @@ public class Text {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }}}
+        }}
