@@ -1,7 +1,9 @@
-package org.example;
+package Lesson6Task1;
+
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        FileReader.printFileContent();
     }
+
 }
