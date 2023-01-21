@@ -9,12 +9,6 @@ public class Manager extends BaseEmployee {
         super(name, surname, employmentYear, salary);
         this.bonus = baseBonus;
     }
-
-    public Manager(String name, String surname, int employmentYear) {
-        super(name, surname, employmentYear, baseSalary);
-        this.bonus = baseBonus;
-    }
-
     @Override
     public int calculateMonthlySalary() {
         return this.getSalary() + bonus;
