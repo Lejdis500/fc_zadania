@@ -5,19 +5,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalculatorTest {
     @ParameterizedTest
     @ValueSource(ints = {1, 3, 5, 7, 15})
-    public void checkIfOdd(int number) {
-        boolean result = Calculator.isOdd(number);
-        assertEquals(number % 2 == 0, result);
-
+    public void shouldVerifyNumberIsEven(int number) {
+        Assertions.assertFalse(NumberChecker.isEven(number));
     }
-
     @ParameterizedTest
-    @CsvSource({"123, 6", "456, 15", "789, 24"})
-    public void checkSum(String strNumber, int expected) {
-        int sum = Calculator.sum(strNumber);
-        assertEquals(expected, sum);
+    @ValueSource(ints = {2, 4, 6, 8, 10})
+    public void shouldVerifyNumberIsEven(int number) {
+        Assertions.assertTrue(NumberChecker.isEven(number));
+    }
+    @ParameterizedTest
+    @CsvSource({"123 : 6", "345 : 12", "456 : 15", "567 : 18"})
+    public void shouldCalculateSumOfDigitsOfGivenNumber(int number, int expected) {
+        int actualInt = NumberChecker.sumOfDigitsOfGivenNumber(number);
+        Assertions.assertEquals(expected, actualInt);
     }
 }
-
-
-
