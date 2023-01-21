@@ -20,7 +20,5 @@ public abstract class BaseEmployee {
     public int getSalary() {
         return this.salary;
     }
-
     public abstract int calculateMonthlySalary();
-
 }

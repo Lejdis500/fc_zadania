@@ -7,5 +7,4 @@ public class TicketSeller extends BaseEmployee {
     @Override
     public int calculateMonthlySalary() {
         return getSalary();
-    }
-}
+    }}
