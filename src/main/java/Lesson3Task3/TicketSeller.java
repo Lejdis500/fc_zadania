@@ -8,5 +8,4 @@ public class TicketSeller extends BaseEmployee {
     public int calculateMonthlySalary() {
         return getSalary();
     }
-
 }
