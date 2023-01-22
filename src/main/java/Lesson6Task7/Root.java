@@ -1,14 +1,10 @@
 package Lesson6Task7;
 
 public class Root {
-    public static void main (String [] args) {
-
-        int a = -4;
-    double sqrt = Math.sqrt(a);
-
-
+    public static double getSquareRoot(double number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("Cannot calculate square root of a negative number");
+        }
+        return Math.sqrt(number);
     }
-
-
-
 }
