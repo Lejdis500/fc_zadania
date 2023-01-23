@@ -1,6 +1,6 @@
 package Lesson7Task1;
 
-public class Calculator {
+public class NumberChecker {
 
     public static boolean isEven(int n) {
         return n % 2 == 0;
