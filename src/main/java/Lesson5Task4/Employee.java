@@ -8,11 +8,12 @@ public class Employee {
     private int age;
     private BigDecimal baseSalary;
     private BigDecimal bonus;
-    private final String WHITE_SPACE = "";
 
     public Employee(String name, String surname) {
         this.name = name;
         this.surname = surname;
+        this.baseSalary = BigDecimal.ZERO;
+        this.bonus = BigDecimal.ZERO;
     }
 
     public Employee(String name, String surname, int age) {
@@ -26,7 +27,7 @@ public class Employee {
     }
 
     public Employee(String name, int age, BigDecimal baseSalary, BigDecimal sumOfBonus, String surname) {
-        this(name, surname, age);
+        this(name, surname, age, baseSalary);
         this.bonus = sumOfBonus;
     }
 
@@ -44,7 +45,5 @@ public class Employee {
 
     public BigDecimal getSalary() {
         return baseSalary;
-
     }
 }
-
