@@ -1,5 +1,7 @@
 package Lesson6Task8;
 
-public class IllegalLengthException {
-    public class IllegalLengthException(String message) { super(message);
-    }}
+public class IllegalLengthException extends RuntimeException {
+    public IllegalLengthException(String message) {
+        super(message);
+    }
+}
