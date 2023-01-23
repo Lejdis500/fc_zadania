@@ -5,13 +5,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class TextConverter {
-    static void convertText(String path) {
+    static void convertText(String inputPath, String outputPath) {
         try {
-            String text = Files.readString(Path.of(path));
-            System.out.println(text);
+            String text = Files.readString(Path.of(inputPath));
             String upperCase = text.toUpperCase();
-            System.out.println(upperCase);
-            Files.writeString(Path.of(path), upperCase);
+            Files.writeString(Path.of(outputPath), upperCase);
         } catch (IOException e) {
             throw new RuntimeException(e);
 

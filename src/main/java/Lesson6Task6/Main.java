@@ -4,7 +4,7 @@ import Lesson6Task6.TextConverter;
 
 public class Main {
     public static void main(String[] args) {
-        TextConverter.convertText("src/main/resources/data.txt");
+        TextConverter.convertText("src/main/resources/data.txt", "src/main/resources/output.txt");
 
     }
 }
