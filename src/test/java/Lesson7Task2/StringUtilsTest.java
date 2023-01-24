@@ -1,5 +1,9 @@
 package Lesson7Task2;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StringUtilsTest {
@@ -13,9 +17,9 @@ class StringUtilsTest {
 
     @Test
     void shouldThrowExceptionForNullExceptionInput() {
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () → {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class () {
             StringUtilsTest.toUpperCase(null);
         });
-        assert Equals("The place cannot be empty", exception.getMessage());
+        assertEquals("The place cannot be empty", exception.getMessage());
     }
 }
