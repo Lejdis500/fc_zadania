@@ -23,5 +23,4 @@ class TextTest {
                 Arguments.of("ala ma kota", 11)
         );
     }
-
 }
