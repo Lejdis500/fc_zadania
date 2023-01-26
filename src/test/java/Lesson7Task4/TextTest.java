@@ -15,7 +15,6 @@ class TextTest {
         int actualValue = Text.getLength(input);
         Assertions.assertEquals(expected, actualValue);
     }
-
     public static Stream<Arguments> provideLengthStringOfText() {
         return Stream.of(
                 Arguments.of("", 0),
