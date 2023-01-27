@@ -21,6 +21,7 @@ public class Names {
             }
         }
         System.out.println("List without duplicates" + uniqueNames);
+
         List<String> reverseNames = new ArrayList<>();
         for (int i = uniqueNames.size() - 1; i >= 0; i--) {
             reverseNames.add(uniqueNames.get(i));
