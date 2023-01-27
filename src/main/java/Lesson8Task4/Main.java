@@ -7,10 +7,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Person> persons = new ArrayList<>();
-        persons.add(new Person("Jan", "Kowalski", 2000L, 1.87d, 65.6d));
-        persons.add(new Person("Anna", "Nowak", 1996L, 1.67d, 50.2d));
-        persons.add(new Person("Bartosz", "Szymanski", 2002L, 2.07d, 102.0d));
+        List<DateOfPerson.Person> persons = new ArrayList<>();
+        persons.add(new DateOfPerson("Jan", "Kowalski", 2000L, 1.87d, 65.6d));
+        persons.add(new DateOfPerson("Anna", "Nowak", 1996L, 1.67d, 50.2d));
+        persons.add(new DateOfPerson("Bartosz", "Szymanski", 2002L, 2.07d, 102.0d));
 
         printPersons(persons);
 
@@ -22,21 +22,24 @@ public class Main {
 
         System.out.println("================================= Wzrost");
 
-        persons.sort(Comparator.comparing(Person::getHeight));
+        persons.sort(Comparator.comparing(DateOfPerson::getHeight));
 
         printPersons(persons);
 
         System.out.println("================================= Waga");
 
-        persons.sort(Comparator.comparing(Person::getWeight).reversed());
+        persons.sort(Comparator.comparing(DateOfPerson::getWeight).reversed());
 
         printPersons(persons);
 
     }
-    public static void printPersons(List<Person> persons) {
-        for (Person person : persons) {
-            System.out.println(person);
+
+
+    public static void printPersons(List<DateOfPerson> persons) {
+        for (DateOfPersonperson:
+            System.out.println("person");
         }
 
     }
+
 }
