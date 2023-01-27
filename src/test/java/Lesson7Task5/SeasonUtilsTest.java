@@ -1,13 +1,18 @@
 package Lesson7Task5;
 
+import org.junit.jupiter.api.Test;
+
 import java.time.Month;
 
-class SeasonTest {
+import static java.time.Month.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+class SeasonUtilsTest {
     @Test
     void shouldGetSeason_Winter() {
-        assertEquals(Season.WINTER, SeasonUtils.getSeaon(Month.DECEMBER));
-        assertEquals(Season.WINTER, SeasonUtils.getSeaon(Month.JANUARY));
-        assertEquals(Season.WINTER, SeasonUtils.getSeaon(Month.FEBRUARY));
+        assertEquals(Season.WINTER, SeasonUtils.getSeaon(DECEMBER));
+        assertEquals(Season.WINTER, SeasonUtils.getSeaon(JANUARY));
+        assertEquals(Season.WINTER, SeasonUtils.getSeaon(FEBRUARY));
     }
 
     @Test
@@ -30,9 +35,13 @@ class SeasonTest {
         assertEquals(Season.AUTUMN, SeasonUtils.getSeaon(Month.OCTOBER));
         assertEquals(Season.AUTUMN, SeasonUtils.getSeaon(Month.NOVEMBER));
     }
+
     @Test
-    void shouldGetSeason_nullInput() {
-        assertThrows(IllegalArgumentException.clas, () - {
-    SeasonUtils.getSeason(null);
-    });
-    }}
+    void shouldGetSeasonNullInput() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            SeasonUtils.getSeaon(null);
+        });
+    }
+}
+
+
