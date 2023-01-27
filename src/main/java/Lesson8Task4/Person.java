@@ -1,25 +1,28 @@
 package Lesson8Task4;
 
+import com.sun.java.util.jar.pack.ClassReader;
+
 public class Person {
     public class Person implements Comparable<Person> {
         private String name;
         private String surname;
-        private long dateOfBirth;
+        private long birthYear;
         private double weight;
         private double height;
 
-        public Person(String name, String surname, long dateOfBirth,double weight, double height) {
+        public Person(String name, String surname, long dateOfBirth, long birthYear, double weight, double height) {
             this.name = name;
             this.surname = surname;
-            this.dateOfBirth = dateOfBirth;
+            this.birthYear = birthYear;
             this.weight = weight;
             this.height = height;
         }
-        public
 
         @Override
         public int compareTo(Person o) {
-            return 0;
+            return birthYear.compareTo(o.getBirthYear());
         }
+
+
     }
 }
