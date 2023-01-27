@@ -14,6 +14,7 @@ public class Names {
         names.add("Karolina");
         names.add("Dorota");
         names.add("Piotr");
+
         List<String> uniqueNames = new ArrayList<>();
         for (String name : names) {
             if (!uniqueNames.contains(name)) {
@@ -27,11 +28,13 @@ public class Names {
             reverseNames.add(uniqueNames.get(i));
         }
         System.out.println("Elements in reverse order:" + reverseNames);
+
+        List<String> changeNames = new ArrayList<>();
         String changeFrom = "Anna";
         String changeTo = "Joanna";
-        for (int i = 0; i < reverseNames.size(); i++) {
-            if (reverseNames.get(i).equals(changeFrom)) {
-                reverseNames.set(i, changeTo);
+        for (int i = 0; i < changeNames.size(); i++) {
+            if (changeNames.get(i).equals(changeFrom)) {
+               changeNames.set(i, changeTo);
             }
         }
         System.out.println("Elements after change: " + changeFrom + "->" + changeTo + "");
