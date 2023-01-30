@@ -12,18 +12,16 @@ class StringUtilsTest {
     @ValueSource(strings = {"Hello Words"})
     void shouldConvertToUpperCase(String input) {
         String expected = input.toUpperCase();
-        String actual = StringUtilsTest.toUpperCase(input);
+        String actual = StringUtils.toUpperCase(input);
         Assertions.assertEquals(expected, actual);
-    }
-
-    private static String toUpperCase(String input) {
     }
 
     @Test
     void shouldThrowExceptionForNullExceptionInput() {
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class () {
-            StringUtilsTest(null);
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            StringUtils.toUpperCase(null);
         });
-        Assertions assertEquals("The place cannot be empty", exception.getMessage());
+
+        Assertions.assertEquals("The place cannot be empty", exception.getMessage());
     }
 }
