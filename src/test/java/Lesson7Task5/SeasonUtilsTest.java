@@ -4,11 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.EnumOptions;
 
 import java.time.Month;
 
-import static java.time.Month.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SeasonUtilsTest {
@@ -18,25 +16,22 @@ class SeasonUtilsTest {
         assertEquals(Season.WINTER, SeasonUtils.getSeason(month));
     }
 
-    @Test
-    void shouldGetSeasonSpring() {
-        assertEquals(Season.SPRING, SeasonUtils.getSeason(Month.MARCH));
-        assertEquals(Season.SPRING, SeasonUtils.getSeason(Month.APRIL));
-        assertEquals(Season.SPRING, SeasonUtils.getSeason(Month.MAY));
+    @ParameterizedTest
+    @EnumSource(value = Month.class, names = {"MARCH", "APRIL", "MAY"})
+    void shouldGetSeasonSpring(Month month) {
+        assertEquals(Season.SPRING, SeasonUtils.getSeason(month));
     }
 
-    @Test
-    void shouldGetSeasonSummer() {
-        assertEquals(Season.SUMMER, SeasonUtils.getSeason(Month.JUNE));
-        assertEquals(Season.SUMMER, SeasonUtils.getSeason(Month.JULY));
-        assertEquals(Season.SUMMER, SeasonUtils.getSeason(Month.AUGUST));
+    @ParameterizedTest
+    @EnumSource(value = Month.class, names = {"JUNE", "JULY", "AUGUST"})
+    void shouldGetSeasonSummer(Month month) {
+        assertEquals(Season.SUMMER, SeasonUtils.getSeason(month));
     }
 
-    @Test
-    void shouldGetSeasonAutumn() {
-        assertEquals(Season.AUTUMN, SeasonUtils.getSeason(Month.SEPTEMBER));
-        assertEquals(Season.AUTUMN, SeasonUtils.getSeason(Month.OCTOBER));
-        assertEquals(Season.AUTUMN, SeasonUtils.getSeason(Month.NOVEMBER));
+    @ParameterizedTest
+    @EnumSource(value = Month.class, names = {"SEPTEMBER", "OCTOBER", "NOVEMBER"})
+    void shouldGetSeasonAutumn(Month month) {
+        assertEquals(Season.AUTUMN, SeasonUtils.getSeason(month));
     }
 
     @Test
