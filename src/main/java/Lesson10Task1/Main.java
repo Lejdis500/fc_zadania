@@ -7,8 +7,21 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/*
+
+Main -> PhoneBook
+phoneList nie powinno byc statyczne
+List -> Map
+brak metody get zwracajacej Person na podstawie imienia i nazwiska (phoneBook.get("Patrycja Wójcik"))
+
+ */
+
 public class Main {
     public static List<Person> phoneList;
+
+    // public final Map<String, Person> phones = ...
+    // key: firstname + lastname
+    // value Person
 
     public static void loadData() throws IOException {
         Path path = Paths.get("src/main/resources/phones.txt");
