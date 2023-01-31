@@ -5,13 +5,42 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class DateInfo {
-    LocalDate date= LocalDate.of(1997, 01, 11);
-     DateInfo.setWeekDayOfBirth(date.getDayOfWeek());
-        DateInfo.setYears(Period.between(date, LocalDate.now()).getYears());
-}
-    public int years;
-    public int weekOfYear;
-    public DayOfWeek weekDayOfBirth;
+    private int years;
+    private int weekOfYear;
+    private DayOfWeek weekDayOfBirth;
 
+    public int getYears() {
+        return years;
+    }
+
+    public void setYears(int years) {
+        this.years = years;
+    }
+
+    public int getWeekOfYear() {
+        return weekOfYear;
+    }
+
+    public void setWeekOfYear(int weekOfYear) {
+        this.weekOfYear = weekOfYear;
+    }
+
+    public DayOfWeek getWeekDayOfBirth() {
+        return weekDayOfBirth;
+    }
+
+    public void setWeekDayOfBirth(DayOfWeek weekDayOfBirth) {
+        this.weekDayOfBirth = weekDayOfBirth;
+    }
+
+    @Override
+    public String toString() {
+        return "DateInfo{" +
+                "years=" + years +
+                ", weekOfYear=" + weekOfYear +
+                ", weekDayOfBirth=" + weekDayOfBirth +
+                '}';
+    }
+}
 
 
