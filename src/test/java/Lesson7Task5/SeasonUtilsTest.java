@@ -1,6 +1,10 @@
 package Lesson7Task5;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.EnumOptions;
 
 import java.time.Month;
 
@@ -8,11 +12,10 @@ import static java.time.Month.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SeasonUtilsTest {
-    @Test
-    void shouldGetSeasonWinter() {
-        assertEquals(Season.WINTER, SeasonUtils.getSeason(DECEMBER));
-        assertEquals(Season.WINTER, SeasonUtils.getSeason(JANUARY));
-        assertEquals(Season.WINTER, SeasonUtils.getSeason(FEBRUARY));
+    @ParameterizedTest
+    @EnumSource(value = Month.class, names = {"DECEMBER", "JANUARY", "FEBRUARY"})
+    void shouldGetSeasonWinter(Month month) {
+        assertEquals(Season.WINTER, SeasonUtils.getSeason(month));
     }
 
     @Test
@@ -30,16 +33,18 @@ class SeasonUtilsTest {
     }
 
     @Test
-    void shouldGetSeason_Autumn() {
+    void shouldGetSeasonAutumn() {
         assertEquals(Season.AUTUMN, SeasonUtils.getSeason(Month.SEPTEMBER));
         assertEquals(Season.AUTUMN, SeasonUtils.getSeason(Month.OCTOBER));
         assertEquals(Season.AUTUMN, SeasonUtils.getSeason(Month.NOVEMBER));
     }
 
     @Test
-    void shouldGetSeasonNullInput() {
-        assertThrows(IllegalArgumentException.class, () -> {
+    void shouldGetExceptionWhenInputIsNull() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             SeasonUtils.getSeason(null);
         });
+
+        Assertions.assertEquals("Month cannot be null", exception.getMessage());
     }
 }
