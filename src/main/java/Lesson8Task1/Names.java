@@ -24,19 +24,19 @@ public class Names {
         System.out.println("List without duplicates" + uniqueNames);
 
         List<String> reverseNames = new ArrayList<>();
-        for (int i = uniqueNames.size() - 1; i >= 0; i--) {
-            reverseNames.add(uniqueNames.get(i));
+        for (int i = names.size() - 1; i >= 0; i--) {
+            reverseNames.add(names.get(i));
         }
         System.out.println("Elements in reverse order:" + reverseNames);
 
-        List<String> changeNames = new ArrayList<>();
         String changeFrom = "Anna";
         String changeTo = "Joanna";
-        for (int i = 0; i < changeNames.size(); i++) {
-            if (changeNames.get(i).equals(changeFrom)) {
-               changeNames.set(i, changeTo);
+        for (int i = 0; i < names.size(); i++) {
+            if (names.get(i).equals(changeFrom)) {
+                names.set(i, changeTo);
             }
         }
         System.out.println("Elements after change: " + changeFrom + "->" + changeTo + "");
+        System.out.println(names);
     }
 }
