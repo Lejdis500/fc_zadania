@@ -11,10 +11,10 @@ public class PizzaMenu {
                 new Pizza(true, Arrays.asList("mozarella", "pieczarki", "cebula"), 350, "cebulowa"),
                 new Pizza(true, Arrays.asList("mozarella", "pomidor", "papryka"), 320, "pomidorowa"),
                 new Pizza(true, Arrays.asList("mozarella", "papryka", "pomidor"), 380, "paprykowa"),
-                new Pizza(false, Arrays.asList("mozarella", "szynka parmenska", "cebula", "seler"), 400, "miesna"),
+                new Pizza(false, Arrays.asList("mozarella", "salami", "cebula", "seler"), 400, "miesna"),
                 new Pizza(false, Arrays.asList("mozarella", "pieczarki", "pomidor", "papryka", "seler"), 480,
                         "wegetaianska"),
-                new Pizza(false, Arrays.asList("mozarella", "salami", "papryka", "seler"), 550, "miesna"),
+                new Pizza(false, Arrays.asList("mozarella", "salami", "papryka", "seler"), 550, "wypasiona"),
                 new Pizza(false, Arrays.asList("mozarella", "pieczarki", "pomidor", "papryka"), 520, "pieczarkowa"),
                 new Pizza(false, Arrays.asList("mozarella", "salami"), 400, "firmowa"),
                 new Pizza(false, Arrays.asList("mozarella", "papryka", "seler"), 500, "paprykowa")
@@ -42,9 +42,12 @@ public class PizzaMenu {
             System.out.println("Nie kazda pizza zawiera mozzarelle");
         }
         Pizza pizzaMaxCalories = menu.stream()
-                .max() ->Integer.compare
+                .max(Comparator.comparingInt(Pizza::getCalories))
+                .get();
         System.out.println("Pizza o najwyzszej kalorycznosci:" + pizzaMaxCalories.getName());
-        Pizza pizzaMin Calories = menu.stream()
-        System.out.println("Pizza o najnizszej kalorycznosci:" + pizzaMin.getName());
+        Pizza pizzaMinCalories = menu.stream()
+                .min(Comparator.comparingInt(Pizza::getCalories))
+                .get();
+        System.out.println("Pizza o najnizszej kalorycznosci:" + pizzaMinCalories.getName());
     }
 }
