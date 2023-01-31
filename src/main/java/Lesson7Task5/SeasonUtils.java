@@ -3,7 +3,7 @@ package Lesson7Task5;
 import java.time.Month;
 
 public class SeasonUtils {
-    public static Season getSeaon(Month month) {
+    public static Season getSeason(Month month) {
         if (month == null) {
             throw new IllegalArgumentException("Month cannot be null");
         }

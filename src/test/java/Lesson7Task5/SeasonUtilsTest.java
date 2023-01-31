@@ -9,37 +9,37 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SeasonUtilsTest {
     @Test
-    void shouldGetSeason_Winter() {
-        assertEquals(Season.WINTER, SeasonUtils.getSeaon(DECEMBER));
-        assertEquals(Season.WINTER, SeasonUtils.getSeaon(JANUARY));
-        assertEquals(Season.WINTER, SeasonUtils.getSeaon(FEBRUARY));
+    void shouldGetSeasonWinter() {
+        assertEquals(Season.WINTER, SeasonUtils.getSeason(DECEMBER));
+        assertEquals(Season.WINTER, SeasonUtils.getSeason(JANUARY));
+        assertEquals(Season.WINTER, SeasonUtils.getSeason(FEBRUARY));
     }
 
     @Test
-    void shouldGetSeason_Spring() {
-        assertEquals(Season.SPRING, SeasonUtils.getSeaon(Month.MARCH));
-        assertEquals(Season.SPRING, SeasonUtils.getSeaon(Month.APRIL));
-        assertEquals(Season.SPRING, SeasonUtils.getSeaon(Month.MAY));
+    void shouldGetSeasonSpring() {
+        assertEquals(Season.SPRING, SeasonUtils.getSeason(Month.MARCH));
+        assertEquals(Season.SPRING, SeasonUtils.getSeason(Month.APRIL));
+        assertEquals(Season.SPRING, SeasonUtils.getSeason(Month.MAY));
     }
 
     @Test
-    void shouldGetSeason_Summer() {
-        assertEquals(Season.SUMMER, SeasonUtils.getSeaon(Month.JUNE));
-        assertEquals(Season.SUMMER, SeasonUtils.getSeaon(Month.JULY));
-        assertEquals(Season.SUMMER, SeasonUtils.getSeaon(Month.AUGUST));
+    void shouldGetSeasonSummer() {
+        assertEquals(Season.SUMMER, SeasonUtils.getSeason(Month.JUNE));
+        assertEquals(Season.SUMMER, SeasonUtils.getSeason(Month.JULY));
+        assertEquals(Season.SUMMER, SeasonUtils.getSeason(Month.AUGUST));
     }
 
     @Test
     void shouldGetSeason_Autumn() {
-        assertEquals(Season.AUTUMN, SeasonUtils.getSeaon(Month.SEPTEMBER));
-        assertEquals(Season.AUTUMN, SeasonUtils.getSeaon(Month.OCTOBER));
-        assertEquals(Season.AUTUMN, SeasonUtils.getSeaon(Month.NOVEMBER));
+        assertEquals(Season.AUTUMN, SeasonUtils.getSeason(Month.SEPTEMBER));
+        assertEquals(Season.AUTUMN, SeasonUtils.getSeason(Month.OCTOBER));
+        assertEquals(Season.AUTUMN, SeasonUtils.getSeason(Month.NOVEMBER));
     }
 
     @Test
     void shouldGetSeasonNullInput() {
         assertThrows(IllegalArgumentException.class, () -> {
-            SeasonUtils.getSeaon(null);
+            SeasonUtils.getSeason(null);
         });
     }
 }
