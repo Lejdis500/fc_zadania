@@ -4,13 +4,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PeselValidator {
-    private static final Pattern peselPattern = Pattern.compile("^\\d{11}$");
+    private static final Pattern PESEL_PATTERN = Pattern.compile("^\\d{11}$");
 
     public static void validate(String pesel) {
-        Matcher matcher = peselPattern.matcher(pesel);
+        Matcher matcher = PESEL_PATTERN.matcher(pesel);
         boolean result = matcher.matches();
         if (!result) {
             throw new IllegalArgumentException("Niepoprawny format peselu");
+        }
+        if (pesel.length() != 11) {
+            throw new IllegalArgumentException("Pesel powinien miec 11 znaków");
         }
     }
 }
