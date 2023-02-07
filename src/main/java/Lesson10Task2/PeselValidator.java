@@ -12,8 +12,5 @@ public class PeselValidator {
         if (!result) {
             throw new IllegalArgumentException("Niepoprawny format peselu");
         }
-        if (pesel.length() != 11) {
-            throw new IllegalArgumentException("Pesel powinien miec 11 znaków");
-        }
     }
 }
