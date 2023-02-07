@@ -5,13 +5,11 @@ import java.util.regex.Pattern;
 
 public class PasswordValidator {
 
-    public static void isPasswordCorrect(String password) {
+    public static boolean isPasswordCorrect(String password) {
 
-        Pattern pattern = Pattern.compile("^(?=.*[A-Z].*)(?=.*\\d.*)(?!.*%s.*)(?!.*%s.*)\\w{7,}$");
+        Pattern pattern = Pattern.compile("^(?=.*\\d)(?=.*[A-Z])(?!.*?(?:23).{7,}$");
         Matcher matcher = pattern.matcher(password);
         boolean matches = matcher.matches();
-        if (!matches){
-            throw new  IllegalArgumentException ("Niepoprawy format hasla");
-        }
+        return matches;
     }
 }
