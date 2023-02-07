@@ -42,4 +42,4 @@ class SeasonUtilsTest {
 
         Assertions.assertEquals("Month cannot be null", exception.getMessage());
     }
-}
+}}
